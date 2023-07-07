@@ -14,12 +14,11 @@ jobs:
       uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: 1.5.2 # Replace with desired Terraform version
-    - name: Configure Snowflake credentials
-      run: |
-        echo "export SNOWFLAKE_ACCOUNT=${{ secrets.SNOWFLAKE_ACCOUNT }}" >> $GITHUB_ENV
-        echo "export SNOWFLAKE_USER=${{ secrets.SNOWFLAKE_USER }}" >> $GITHUB_ENV
-        echo "export SNOWFLAKE_PASSWORD=${{ secrets.SNOWFLAKE_PASSWORD }}" >> $GITHUB_ENV
     - name: Run Terraform
+      env:
+        SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+        SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+        SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
       run: |
         terraform init
         terraform plan
