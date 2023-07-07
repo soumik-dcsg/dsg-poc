@@ -12,7 +12,6 @@ provider "snowflake" {
   username   = "soumikcal"
   password   = "Tinku449"
   account    = "ipudwtv-us43863"
-  warehouse  = "COMPUTE_WH"
 }
 
 resource "snowflake_database" "db" {
