@@ -12,7 +12,7 @@ provider "snowflake" {
   username   = "soumikcal"
   password   = "Tinku449"
   account    = "ipudwtv-us43863"
-  warehouse  = "EDW_ENGINEER_WH_S"
+  warehouse  = "TEST_DB1"
 }
 
 resource "snowflake_database" "db" {
