@@ -6,16 +6,19 @@ terraform {
     }
   }
 }
+variable "USER" { type= string } 
+variable "PASSWORD" { type= string } 
+variable "ACCOUNT" { type= string } 
 
 provider "snowflake" {
-  role  = "ACCOUNTADMIN"
+  role     = "ACCOUNTADMIN"
   username = "${var.USER}"
   password = "${var.PASSWORD}"
   account  = "${var.ACCOUNT}"
 }
 
 resource "snowflake_database" "db" {
-  name     = "TEST_DB3"
+  name = "TEST_DB3"
 }
 
 resource "snowflake_warehouse" "warehouse" {
