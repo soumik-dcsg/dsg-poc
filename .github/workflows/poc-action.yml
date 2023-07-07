@@ -16,9 +16,9 @@ jobs:
         terraform_version: 1.5.2 # Replace with desired Terraform version
     - name: Run Terraform
       env:
-        SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
-        SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
-        SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+        ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+        USER: ${{ secrets.SNOWFLAKE_USER }}
+        PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
       run: |
         terraform init
         terraform plan
