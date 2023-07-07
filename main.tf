@@ -9,9 +9,9 @@ terraform {
 
 provider "snowflake" {
   role  = "ACCOUNTADMIN"
-  username   = "SCHEMA_CHANGE_TEST_USER"
-  password   = "DicksSportingGoods2023#$"
-  account    = "sl38675"
+  username   = "soumikcal"
+  password   = "Tinku449"
+  account    = "ipudwtv-us43863"
   warehouse  = "EDW_ENGINEER_WH_S"
 }
 
