@@ -20,6 +20,9 @@ jobs:
         USER: ${{ secrets.SNOWFLAKE_USER }}
         PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
       run: |
+        export ACCOUNT = $ACCOUNT
+        export USER = $USER
+        export PASSWORD = $PASSWORD
         terraform init
         terraform plan
         terraform apply --auto-approve
