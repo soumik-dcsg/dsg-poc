@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    snowflake = {
+      source  = "chanzuckerberg/snowflake"
+      version = "0.25.36"
+    }
+  }
+}
+
 provider "snowflake" {
 
   username   = "SCHEMA_CHANGE_TEST_USER"
