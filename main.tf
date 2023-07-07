@@ -12,7 +12,7 @@ provider "snowflake" {
   username   = "soumikcal"
   password   = "Tinku449"
   account    = "ipudwtv-us43863"
-  warehouse  = "TEST_DB1"
+  warehouse  = "COMPUTE_WH"
 }
 
 resource "snowflake_database" "db" {
@@ -20,8 +20,8 @@ resource "snowflake_database" "db" {
 }
 
 resource "snowflake_warehouse" "warehouse" {
-  name           = "TEST_DB1"
-  warehouse_size = "small"
+  name           = "COMPUTE_WH"
+  warehouse_size = "Small"
 
-  auto_suspend = 60
+  auto_suspend = 650
 }
