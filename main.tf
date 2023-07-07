@@ -15,8 +15,13 @@ provider "snowflake" {
   warehouse  = "EDW_ENGINEER_WH_S"
 }
 
-resource "snowflake_snowsql" "select_query" {
-  name     = "select_query"
-  query    = "select * from \"ADMIN_UTILS\".\"SCHEMACHANGE\".\"CHANGE_HISTORY\" limit 100"
+resource "snowflake_database" "db" {
+  name     = "TF_DEMO"
+}
 
+resource "snowflake_warehouse" "warehouse" {
+  name           = "TF_DEMO"
+  warehouse_size = "large"
+
+  auto_suspend = 60
 }
