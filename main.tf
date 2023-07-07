@@ -16,12 +16,12 @@ provider "snowflake" {
 }
 
 resource "snowflake_database" "db" {
-  name     = "TF_DEMO"
+  name     = "TEST_DB1"
 }
 
 resource "snowflake_warehouse" "warehouse" {
-  name           = "TF_DEMO"
-  warehouse_size = "large"
+  name           = "TEST_DB1"
+  warehouse_size = "small"
 
   auto_suspend = 60
 }
