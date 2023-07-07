@@ -13,8 +13,6 @@ provider "snowflake" {
   password   = "DicksSportingGoods2023#$"
   account    = "sl38675"
   warehouse  = "EDW_ENGINEER_WH_S"
-  database   = "ADMIN_UTILS"
-  schema     = "SCHEMACHANGE"
 }
 
 resource "snowflake_snowsql" "select_query" {
