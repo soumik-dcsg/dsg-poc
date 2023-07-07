@@ -9,9 +9,9 @@ terraform {
 
 provider "snowflake" {
   role  = "ACCOUNTADMIN"
-  username   = ${env.USER}
-  password   = ${env.PASSWORD}
-  account    = ${env.ACCOUNT} 
+  username   = "${env.USER}"
+  password   = "${env.PASSWORD}"
+  account    = "${env.ACCOUNT}" 
 }
 
 resource "snowflake_database" "db" {
