@@ -8,9 +8,11 @@ on:
      db:
         description: db details
         required: true
+        default: '2.5.3'
      ws:
         description: db details
         required: true
+        default: '2.5.3'
 jobs:
   terraform:
     runs-on: ubuntu-latest
