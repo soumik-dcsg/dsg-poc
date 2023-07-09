@@ -8,7 +8,9 @@ terraform {
 }
 variable "USER" { type= string } 
 variable "PASSWORD" { type= string } 
-variable "ACCOUNT" { type= string } 
+variable "ACCOUNT" { type= string }
+variable "DB" { type= string } 
+variable "WS" { type= string } 
 
 provider "snowflake" {
   role     = "ACCOUNTADMIN"
@@ -18,11 +20,11 @@ provider "snowflake" {
 }
 
 resource "snowflake_database" "db" {
-  name = "TEST_DB4"
+  name = "${var.DB}"
 }
 
 resource "snowflake_warehouse" "warehouse" {
-  name           = "COMPUTE_WH4"
+  name           = "${var.WS}"
   warehouse_size = "X-Small"
 
   auto_suspend = 650
