@@ -27,7 +27,7 @@ jobs:
         USER: ${{ secrets.SNOWFLAKE_USER }}
         PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
         DB: ${{ github.event.inputs.db }}
-        ws: ${{ github.event.inputs.ws }}
+        WS: ${{ github.event.inputs.ws }}
       run: |
         export TF_VAR_ACCOUNT=$ACCOUNT
         export TF_VAR_USER=$USER
