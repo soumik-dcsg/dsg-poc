@@ -8,6 +8,9 @@ on:
      db:
         description: db details
         required: true
+     ws:
+        description: db details
+        required: true
 jobs:
   terraform:
     runs-on: ubuntu-latest
@@ -23,10 +26,14 @@ jobs:
         ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
         USER: ${{ secrets.SNOWFLAKE_USER }}
         PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+        DB: ${{ github.event.inputs.db }}
+        ws: ${{ github.event.inputs.ws }}
       run: |
         export TF_VAR_ACCOUNT=$ACCOUNT
         export TF_VAR_USER=$USER
         export TF_VAR_PASSWORD=$PASSWORD
+        export TF_VAR_DB=$DB
+        export TF_VAR_WS=$WS
         terraform init
         terraform plan
         terraform apply --auto-approve
